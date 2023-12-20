@@ -1,0 +1,18 @@
+<!DOCTYPE html>  
+<html>  
+ <head>  
+    <title>Heading elements</title>  
+ </head>  
+ <body>  
+     <h1> Welcome to Spring MVC </h1> 
+     <h1>called by home controller  </h1> 
+     
+     <% 
+       String name= (String)request.getAttribute("name");
+       Integer id=(Integer)request.getAttribute("id");
+       List<String> friends = (List<String))request.getAttribute("f");
+     
+     %>
+     
+   </body>  
+</html>  
