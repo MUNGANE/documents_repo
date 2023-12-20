@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:util="http://www.springframework.org/schema/util"
+ xmlns:c="http://www.springframework.org/schema/c"
+ 
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ https://www.springframework.org/schema/context/spring-context-4.0.xsd
+ http://www.springframework.org/schema/util
+ https://www.springframework.org/schema/util/spring-util-4.0.xsd">
+ 
+ <!-- to use standalone list you need util schema -->
+ <!-- here we can use same list(in case we want same list ) for different bean means we dont need to create same type of list again  -->
+ <!-- also we can mention type of clss of list(arraylist,linkedlist etc) -->
+ 
+ <util:list list-class="java.util.LinkedList" id="bestfriend">
+    <value>Ashwini</value>
+    <value>Snehal</value>
+    <value>Ekta</value>
+    <value>Srushti</value>
+ </util:list>
+ 
+ <util:map map-class="java.util.HashMap" id="FS">
+   <entry key="java" value="1000"/>
+   <entry key="Hibernate" value="2000"/>
+   <entry key="MVC" value="3000"/>
+ </util:map>
+ 
+ 
+ <bean class="com.springcore.standalone.Person" name="person">
+     <property name="friends">
+         <ref bean="bestfriend"/>
+     </property>
+     <property name="feesstructure" ref="FS"/>
+ </bean>
+ 
+ <bean class="com.springcore.standalone.Person" name="person2">
+       <property name="friends" ref="bestfriend"/>
+       <property name="feesstructure" ref="FS"/>
+       
+ </bean>
+ </beans>

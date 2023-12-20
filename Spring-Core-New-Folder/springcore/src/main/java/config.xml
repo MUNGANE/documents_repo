@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:aop="http://www.springframework.org/schema/aop"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/aop
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/aop/spring-aop.xsd">
+ 
+ 
+ 
+ 
+ <bean class="com.springcore.Student" name="Student1" >
+ <property name="studentId">
+   <value> 1234</value>
+ </property>
+ <property name="studentName">
+    <value> Nikita</value>
+ </property>
+ <property name="studentAddress"> 
+   <value> Achalpur</value>
+ </property>
+ </bean>
+   
+   
+<!-- we can use value as a attribute also to reduce code -->
+
+<bean class="com.springcore.Student" name="Student2">
+<property name="studentId" value="5678"/>
+<property name ="studentName" value="Vahin"/>
+<property name="studentAddress" value="Paratwada"/>
+</bean>
+
+<!-- we can use p schema as well to make it  more short -->
+<bean class="com.springcore.Student" name="Student3"  p:studentId="9876" p:studentName="Aditya" p:studentAddress="Goa"/>
+
+ 
+</beans>

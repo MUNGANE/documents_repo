@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:aop="http://www.springframework.org/schema/aop"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/aop
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/aop/spring-aop.xsd">
+ 
+ <bean name="student1" class="com.springcore.ref.Student">
+   <property name="Id" value="123"/>
+   <property name="name" value="Nikita"/>
+ </bean>
+ 
+ <bean name="college1" class="com.springcore.ref.College">
+   <property name="name" value="PRpote"/>
+   <property name="std">
+      <ref bean="student1"/>
+   </property>
+   
+ <!-- ref as attribute -->
+   <property name="std" ref="student1"/>
+   
+ 
+ 
+ </bean>
+ <!-- using p schema -->
+ 
+ <bean name="college2" class="com.springcore.ref.College" p:name="Meghe" p:std-ref="student1"/>
+ </beans>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:aop="http://www.springframework.org/schema/aop"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/aop
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/aop/spring-aop.xsd">
+ 
+ 
+ 
+ <bean class="com.springcore.autowiring.Address" name="add"> <!-- here name of bean must must must be same (if using byName) with name of address in class -->
+ 
+   <property name="area" value="Begampura"/>
+   <property name="city" value="Achalpur"/>
+ </bean>
+ 
+ <bean class="com.springcore.autowiring.Employee" name="emp" autowire="byName">
+ </bean>
+ 
+ 
+ <bean class="com.springcore.autowiring.Employee" name="emp1" autowire="byType"><!--  here it will check type is same or not(it will check is there any bean of type Address or not) then name can be different but if there are two beans of same type then it will give exception in that case you can go for byName by giving 2 diff name -->
+ </bean>
+ 
+ <bean class="com.springcore.autowiring.Employee" name="emp2" autowire="no">
+ </bean>
+ <!-- in this case it will inject throught constructore in above it happened by setter inj -->
+ </beans>

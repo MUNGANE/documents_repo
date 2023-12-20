@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:c="http://www.springframework.org/schema/c"
+ xmlns:aop="http://www.springframework.org/schema/aop"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/aop
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/beans/spring-context.xsd
+ http://www.springframework.org/schema/aop/spring-aop.xsd">
+ 
+ <!--<context:annotation-config/>--> <!-- this tag is used to enabled all annotations if you want to enable specific annotation only then use below metho -->
+ <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+ <bean class="com.springcore.lifecycle.Samosa" name="samosa" init-method="init" destroy-method="destroy">
+ <property name="price" value="12"/>
+ </bean>
+ 
+ <bean class="com.springcore.lifecycle.Pepsi" name="pepsi">
+    <property name="price" value="10"/>
+ </bean>
+ <bean class="com.springcore.lifecycle.Jalebi" name="jalebi">
+    <property name="price" value="20"/>
+ </bean>
+ 
+ </beans>
