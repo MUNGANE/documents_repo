@@ -1,0 +1,15 @@
+server:
+  port:9001
+  
+spring:
+  application:
+    nameDEPARTMENT-SERVICE
+  
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+       defaultZone: http://localhot:8761/eureka/
+instance:
+    hostname: localhost

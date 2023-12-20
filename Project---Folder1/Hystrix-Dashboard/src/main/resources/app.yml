@@ -1,0 +1,19 @@
+server:
+  port:9295
+  
+spring:
+   application:
+      name: API-GATWAY
+      
+hystrix:
+   dashboard:
+     proxy-stream-allow-list: "*"
+      
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+       defaultZone: http://localhot:8761/eureka/
+instance:
+    hostname: localhost
